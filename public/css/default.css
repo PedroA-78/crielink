@@ -19,6 +19,7 @@ html, body {
     margin: 0;
     padding: 0;
     border: none;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -30,11 +31,17 @@ body {
 
 /* HEADER */
 
-header {
-    position: sticky;
+.header {
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 100;
+    transition: ease-in-out 300ms;
+}
+
+.header.scrolled {
     border-bottom: 1px solid var(--border);
+    background: var(--white)
 }
 
 .header_container {
@@ -51,7 +58,12 @@ header {
     display: flex;
     align-items: center;
     gap: .75rem;
+    color: var(--white);
     text-decoration: none;
+}
+
+.header.scrolled .header_logo_link {
+    color: rgba(var(--primary));
 }
 
 .header_logo_icon {
@@ -67,7 +79,45 @@ header {
 }
 
 .header_nav {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header_nav_link {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+}
+
+.header.scrolled .header_nav_link {
+    color: rgba(var(--primary));
+}
+
+.header_nav_link:hover {
+    color: rgba(255, 255, 255, .8)
+}
+
+.header.scrolled .header_nav_link:hover {
+    color: rgba(var(--primary), .8);
+}
+
+.header_cta_button {
+    display: inline-block;
+    padding: .625rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: .875rem;
+    font-family: var(--font);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--white);
+    background-color: rgba(var(--primary));
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -79,8 +129,31 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100dvh - 5rem);
+    height: 100dvh;
     background: var(--gradient-hero);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    filter: blur(4rem);
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.hero::before {content: '';
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    filter: blur(3rem);
+    background-color: rgba(255, 255, 255, .1);
 }
 
 .hero_container {
@@ -109,7 +182,7 @@ header {
 .hero_icons {
     grid-row: 1 / 4;
     grid-column: 2 / 3;
-    height: 100%;
+    height: 150%;
     position: relative;
 }
 
@@ -154,6 +227,13 @@ header {
     padding: 2rem;
     animation-delay: 1.5s;
     animation: float-slow ease-in-out 5s infinite;
+}
+
+.hero_icon:nth-child(5) {
+    padding: 5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(1px) brightness(1.25);
 }
 
 @keyframes float-slow {
@@ -219,12 +299,13 @@ header {
     border: none;
     border-radius: 1.25rem;
     padding: .25rem 1.5rem;
-    font-family: var(--font);
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 500;
     color: rgba(var(--primary));
     text-wrap: balance;
+    text-align: center;
+    text-decoration: none;
     background: var(--white);
     cursor: pointer;
     box-sizing: border-box;
@@ -264,6 +345,11 @@ header {
 }
 
 /* SEC - DEFAULTS */
+
+.hero, .about, .services,
+.testimonials, .final {
+    scroll-margin-top: 2rem;
+}
 
 .about_container, .services_container,
 .testimonials_container {
@@ -328,6 +414,13 @@ header {
     margin-top: 4rem;
 }
 
+.problem_icon {
+    transition: ease-in-out 300ms;
+}
+
+.problem:hover .problem_icon {
+    background-color: rgba(var(--primary), .2);
+}
 
 .problem_title {
     margin: 1rem 0 0;
@@ -481,6 +574,7 @@ header {
 .final_action {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .5rem;
     min-height: 3rem;
     margin: 2rem auto 0;
@@ -493,6 +587,7 @@ header {
     font-weight: 500;
     color: rgba(var(--primary));
     text-wrap: balance;
+    text-decoration: none;
     background: var(--white);
     cursor: pointer;
     box-sizing: border-box;
@@ -542,6 +637,7 @@ header {
     margin: 1rem 0 0;
     font-size: 1rem;
     line-height: 1.5rem;
+    text-decoration: none;
     color: var(--text-color);
 }
 
