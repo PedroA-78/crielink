@@ -1,0 +1,123 @@
+@media screen and (max-width: 80rem) {
+    /* SEC - HERO */
+
+    .hero_title {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 64rem) {
+
+    /* SEC - HERO */
+
+    .hero_title {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+
+    .hero_action {
+        flex-direction: column;
+    }
+
+    .hero_action_link {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero_icons {
+        height: 100%;
+    }
+
+    /* SEC - DEFAULTS */
+
+    .header_container,
+    .hero_container, .about_container, 
+    .services_container, .testimonials_container, 
+    .final, .footer_container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 48rem) {
+
+    /* HEADER */
+
+    .header_nav, .header_cta {
+        display: none;
+    }
+
+    /* SEC - HERO */
+
+    .hero_title, .hero_text {
+        text-align: center;
+    }
+
+    .hero_container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero_action {
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+
+    .hero_action_link {
+        width: 60%;
+        min-width: 23rem;
+    }
+
+    .hero_icons {
+        position: absolute;
+        width: 90%;
+        height: 24rem;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .hero_icon:nth-child(1) {
+        top: -33%;
+        left: 5%;
+    }
+
+    .hero_icon:nth-child(2) {
+        top: -30%;
+        right: 7%;
+        padding: 1.75rem;
+    }
+
+    .hero_icon:nth-child(3) {
+        left: 8%;
+        bottom: -33%;
+        padding: 1.25rem;
+    }
+
+    .hero_icon:nth-child(4) {
+        right: 15%;
+        bottom: -41%;
+        padding: 2rem;
+    }
+
+    /* CARDS - DEAFAULT */
+
+    .problems, .services_cards,
+    .testimonials_cards, .footer_container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer_copyright {
+        grid-column: 1 / 2;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    /* SEC - HERO */
+
+    .hero_title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}

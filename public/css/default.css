@@ -52,6 +52,8 @@ body {
     max-width: 80rem;
     height: 5rem;
     margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 .header_logo_link {
@@ -163,6 +165,7 @@ body {
     justify-content: center;
     gap: 0 1rem;
     max-width: 80rem;
+    padding: 0 2rem;
     color: var(--white);
 }
 
@@ -621,6 +624,7 @@ body {
     gap: 2rem;
     max-width: 80rem;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer_crielink_title, .footer_contact_title,
